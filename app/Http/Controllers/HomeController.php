@@ -88,7 +88,7 @@ class HomeController extends Controller
         if($markup){
             $ret .= "&lt;h{$prefix}&gt;{$word}&lt;/h{$prefix}&gt;" . PHP_EOL;
         }else{
-            $ret .= str_repeat("\t",$prefix).$word.PHP_EOL;
+            $ret .= str_repeat("\t",$prefix - 1).$word.PHP_EOL;
         }
         
     }
