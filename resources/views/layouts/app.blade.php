@@ -13,6 +13,33 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <meta property="og:title" content="{{config('app.name')}}">
+    <meta name="twitter:title" content="{{config('app.name')}}">
+    <meta property="og:description" content="Googleサジェストワード導出ツールです。サジェストワードを再帰的に全て導出してきます。">
+    <meta name="twitter:description" content="Googleサジェストワード導出ツールです。サジェストワードを再帰的に全て導出してきます。">
+    <meta name="description" content="Googleサジェストワード導出ツールです。サジェストワードを再帰的に全て導出してきます。">
+
+
+    <!-- あとで編集する -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{url()->current()}}">
+    <meta property="og:image" content="{{url('/eyecatch.png')}}">
+    <meta name="twitter:image" content="{{url('/eyecatch.png')}}">
+
+    <link rel="shortcut icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{url('/apple-touch-icon.png')}}" sizes="180x180">
+    <link rel="icon" href="{{url('/favicon192.png')}}" sizes="192x192">　
+
+    <meta property="og:site_name" content="{{config('app.name','Laravel')}}">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="fb:app_id" content="339751459830292">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{url()->current()}}">
+    <meta name="twitter:domain" content="svschool.jp">
+    <meta name="twitter:creator" content="@ryokurosu">
+    <meta name="twitter:site" content="@ryokurosu">
+    <link rel="canonical" href="{{ url()->current() }}">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
