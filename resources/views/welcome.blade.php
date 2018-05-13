@@ -25,9 +25,6 @@
     <meta property="og:image" content="{{url('/eyecatch.png')}}">
     <meta name="twitter:image" content="{{url('/eyecatch.png')}}">
 
-    <link rel="shortcut icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{url('/apple-touch-icon.png')}}" sizes="180x180">
-    <link rel="icon" href="{{url('/favicon192.png')}}" sizes="192x192">　
 
     <meta property="og:site_name" content="{{config('app.name','Laravel')}}">
     <meta property="og:locale" content="ja_JP">
@@ -113,6 +110,10 @@
     color:gray;
 }
 </style>
+
+    <link rel="shortcut icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{url('/apple-touch-icon.png')}}" sizes="180x180">
+    <link rel="icon" href="{{url('/favicon192.png')}}" sizes="192x192">　
 </head>
 <body>
     <div class="flex-center position-ref full-height">

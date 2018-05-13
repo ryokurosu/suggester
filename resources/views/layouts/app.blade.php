@@ -25,11 +25,6 @@
     <meta property="og:url" content="{{url()->current()}}">
     <meta property="og:image" content="{{url('/eyecatch.png')}}">
     <meta name="twitter:image" content="{{url('/eyecatch.png')}}">
-
-    <link rel="shortcut icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{{url('/apple-touch-icon.png')}}" sizes="180x180">
-    <link rel="icon" href="{{url('/favicon192.png')}}" sizes="192x192">　
-
     <meta property="og:site_name" content="{{config('app.name','Laravel')}}">
     <meta property="og:locale" content="ja_JP">
     <meta property="fb:app_id" content="339751459830292">
@@ -40,12 +35,17 @@
     <meta name="twitter:site" content="@ryokurosu">
     <link rel="canonical" href="{{ url()->current() }}">
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{url('/apple-touch-icon.png')}}" sizes="180x180">
+    <link rel="icon" href="{{url('/favicon192.png')}}" sizes="192x192">　
 </head>
 <body>
     <div id="app">
