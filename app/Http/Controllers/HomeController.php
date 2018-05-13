@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -30,6 +30,13 @@ class HomeController extends Controller
 
     private $textarray;
 
+    public function update(Request $request){
+        $lastid = $request->lastid;
+        $word = \App\Word::findOrFail($lastid + 1);
+        $ret = ['id' => $word->id,'word' => $word->word];
+        return $ret;
+    }
+
     public function post(Request $request){
 
         $word = $request->word;
@@ -40,6 +47,8 @@ class HomeController extends Controller
         $this->textarray = ["1,{$word}"];
         $this->getSuggestWord($word,1);
         $ret = $this->formatLevel($this->textarray,$markup);
+        noticeDiscord($word);
+        \App\Word::create(['word' => $word]);
         return $ret;
 
     }
