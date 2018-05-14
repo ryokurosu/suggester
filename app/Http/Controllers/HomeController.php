@@ -60,7 +60,7 @@ class HomeController extends Controller
           $sitemap->filter('suggestion')->each(function($node) use ($word,&$level){
             try{
                 $suggest_word = $node->attr('data');
-                if($suggest_word == $word) return false;
+                if(in_array($suggest_word,$this->textarray) return false;
                 $level++;
                 array_push($this->textarray,$level.','.$suggest_word);
                 // var_dump($this->textarray);
