@@ -57,6 +57,8 @@ class HomeController extends Controller
         try {
           $client = new Client();
           $sitemap = $client->request('GET',"https://www.google.com/complete/search?hl=en&q=hello&output=toolbar&q=" . urlencode($word));
+          echo "https://www.google.com/complete/search?hl=en&q=hello&output=toolbar&q=" . urlencode($word);
+          var_dump($sitemap);
           $sitemap->filter('suggestion')->each(function($node) use ($word,&$level){
             try{
                 $suggest_word = $node->attr('data');
