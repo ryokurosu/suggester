@@ -39,6 +39,13 @@ class HomeController extends Controller
 
     public function post(Request $request){
 
+        $json = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='. env('NOCAPTCHA_SECRET') .'&response='.$request->response);
+        $return = json_decode($json);
+
+        if ($return->success != true) {
+            return "reCAPTCHAで確認を行ってください。";
+        } 
+
         $word = $request->word;
         $markup = $request->markup;
 
@@ -60,21 +67,20 @@ class HomeController extends Controller
           $sitemap->filter('suggestion')->each(function($node) use ($word,&$level){
             try{
                 $suggest_word = $node->attr('data');
-                if(in_array($suggest_word,$this->suggest_word)) return false;
+                if($suggest_word == $word)  return false;  
                 $level++;
                 array_push($this->textarray,$level.','.$suggest_word);
                 // var_dump($this->textarray);
                 $this->getSuggestWord($suggest_word,$level);
             }catch(Exception $e){
-
+                
             }
         });
       } catch (Exception $e) {
+    }
+}
 
-      }
-  }
-
-  public function formatLevel($textarray,$markup){
+public function formatLevel($textarray,$markup){
     $ret = "";
     foreach($textarray as $line){
         $array = explode(',',$line);

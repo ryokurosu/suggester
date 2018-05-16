@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,6 +47,7 @@
     <link rel="shortcut icon" href="{{url('/favicon.ico')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{url('/apple-touch-icon.png')}}" sizes="180x180">
     <link rel="icon" href="{{url('/favicon192.png')}}" sizes="192x192">　
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
     <div id="app">

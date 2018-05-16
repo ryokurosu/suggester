@@ -38,12 +38,19 @@
                     </div>
 
 
-                    <div class="form-group row mb-0">
+                    <div class="form-group row">
+                        <div class="col-md-8 offset-md-4">
+                            <div class="g-recaptcha" data-sitekey="6LcshVkUAAAAAPtzIYPoidlOtJw6ezSbeba1uoKk"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-8 offset-md-4">
                             <button id="submit" class="btn btn-primary">
                                抽出
                            </button>
                        </div>
+                   </div>
+                   <div class="form-group row">
                        <div class="col-md-8 offset-md-4">
                           <small>※リクエストが集中している場合、結果が正しく表示されない可能性があります。その場合は時間を置いてお試しください。</small>
                       </div>
@@ -66,9 +73,16 @@
 src="https://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
+
 <script>
     $(function(){
         $("#submit").on('click',function(){
+            var flag = true;
+            if(!$('#g-recaptcha-response').val()){
+                alert('reCAPTCHAで確認を行ってください。');
+                flag = false;
+            }
+
             $('#loading').css('display','block');
             $('#result').html('');
             var word = $('#word').val();
@@ -77,7 +91,8 @@ crossorigin="anonymous"></script>
                 type : "POST",
                 　　　data: {
                     word : word,
-                    markup : markup
+                    markup : markup,
+                    response : $('#g-recaptcha-response').val()
                 　　　},
                 　　　url : "{{url('/post')}}",
                 headers: {

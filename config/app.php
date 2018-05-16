@@ -159,8 +159,12 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+          /*
+         * reCAPTCHA <= ここを追加
+         */
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
 
-    ],
+      ],
 
     /*
     |--------------------------------------------------------------------------
