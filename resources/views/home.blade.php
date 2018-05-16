@@ -41,13 +41,13 @@
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
                             <button id="submit" class="btn btn-primary">
-                               抽出
-                           </button>
-                       </div>
-<small>※リクエストが集中している場合、結果が正しく表示されない可能性があります。その場合は時間を置いてお試しください。</small>
-                   </div>
+                             抽出
+                         </button>
+                         <small>※リクエストが集中している場合、結果が正しく表示されない可能性があります。その場合は時間を置いてお試しください。</small>
+                     </div>
+                 </div>
 
-                   <div class="card-body">
+                 <div class="card-body">
                     <center>
                         <img id="loading" style="display:none" src="{{url('/loading.gif')}}" alt="ロード中です。">
                     </center>
@@ -82,14 +82,14 @@ crossorigin="anonymous"></script>
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 　　　success : function(data) {
-                 $('#loading').css('display','none');
-                 $('#result').html(data);
-             　　　},
-             　　　error : function(data) {
-                 $('#loading').css('display','none');
-                 　$('#result').html('<p>エラーが発生しました。</p>');
-             　　}　
-         });
+                   $('#loading').css('display','none');
+                   $('#result').html(data);
+               　　　},
+               　　　error : function(data) {
+                   $('#loading').css('display','none');
+                   　$('#result').html('<p>エラーが発生しました。</p>');
+               　　}　
+           });
 
         });
     });
